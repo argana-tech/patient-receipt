@@ -1,0 +1,166 @@
+<?php
+
+return array(
+    'shared_directory' => array(
+        'remote' => array(
+            // 'host' => '192.168.1.2',
+            // 'path' => 'shared',
+            // 'user' => 'User',
+            // 'password' => 'password',
+            // 'file_type' => 'cifs',
+            // 'check_file' => 'check_file.txt',
+        ),
+        'local' => array(
+        //     'uid' => '',
+        //     'gid' => '',
+        //     'file_mode' => '',
+        //     'dir_mode' => '',
+        ),
+        'dir' => '/mnt/share/',
+        'index' => 'INDEX',
+        'data' => 'DATA',
+        'ok' => 'OK',
+        'ng' => 'ERR',
+        'log' => 'LOG',
+        'log_name_timestamp' => 'YmdHisn',
+    ),
+    'shared_categories' => array(
+        'YOBIDASHI',
+    ),
+    'shared_system_directories' => array(
+        'read' => 'KIDOKU',
+        'receipt' => 'SAIUKE',
+        'receipted' => 'SAIUKE_KEKKA',
+        'locate' => 'ICHI',
+    ),
+    'denbun' => array(
+        'sairai_uketsuke' => array(
+            'unique_id'         => array( 'start' => 0, 'length' => 14, ),
+        ),
+        'sairai_uketuke_result' => array(
+            'unique_id'         => array( 'start' => 0, 'length' => 14, ),
+            'hantei'            => array( 'start' => 14, 'length' => 1, ),
+            'result_code'       => array( 'start' => 15, 'length' => 5, ),
+            'receipt_number'    => array( 'start' => 20, 'length' => 4, ),
+            'guide'             => array( 'start' => 24, 'length' => 1024, ),
+        ),
+        'location' => array(
+            'unique_id'         => array( 'start' => 0, 'length' => 14, ),
+            'locate'            => array( 'start' => 14, 'length' => 1024, ),
+        ),
+        'call' => array(
+            'unique_id'             => array( 'start' => 0, 'length' => 14, ),
+            'message'               => array( 'start' => 14, 'length' => 1024, ),
+            'reserve_date'          => array( 'start' => 1038, 'length' => 8, ),
+            'reserve_type'          => array( 'start' => 1046, 'length' => 2, ),
+            'reserve_items'         => array( 'start' => 1048, 'length' => 3, ),
+            'room_number'           => array( 'start' => 1051, 'length' => 2, ),
+            'reserve_tantou'        => array( 'start' => 1053, 'length' => 8, ),
+            'reserve_start_time'    => array( 'start' => 1061, 'length' => 5, ),
+            'hojoka'                => array( 'start' => 1066, 'length' => 1, ),
+        ),
+        'read' => array(
+            'unique_id'             => array( 'start' => 0, 'length' => 14 ),
+            'reserve_date'          => array( 'start' => 14, 'length' => 8, ),
+            'reserve_type'          => array( 'start' => 22, 'length' => 2, ),
+            'reserve_items'         => array( 'start' => 24, 'length' => 3, ),
+            'room_number'           => array( 'start' => 27, 'length' => 2, ),
+            'reserve_tantou'        => array( 'start' => 29, 'length' => 8, ),
+            'reserve_start_time'    => array( 'start' => 37, 'length' => 5, ),
+            'hojoka'                => array( 'start' => 42, 'length' => 1, ),
+        ),
+    ),
+    'notifier' => array(
+        'api_key' => array(
+            'patient_calls'      => 'Hogehoge',
+            'patient_receiption' => 'Hogehoge',
+        ),
+        'url' => 'https://fcm.googleapis.com/fcm/send',
+    ),
+    /**
+     * 位置情報集計
+     */
+    'location' => array(
+        // 収集スパン
+        'collect' => array(
+            'span' => 1, // 秒ごと
+        ),
+        // 送信スパン
+        'send' => array(
+            'span' => 60, // 秒ごと
+        ),
+        'use_send_time' => array(
+            'start' => '8:00',
+            'end' => '18:00',
+        ),
+        'geo_send_span' => 600, // 秒ごと
+        'distance' => 500, // meter
+    ),
+    'base_point' => array(
+        'latitude' => 0.000000,
+        'longitude' => 0.000000,
+    ),
+    'menu_check_span' => 60, // 秒ごと
+
+    /**
+     * 受付開始日
+     */
+    'release' => '2019-01-01', // Y-m-d
+    /**
+     * 受付時間
+     */
+    'receipt_time' => array(
+        'start' => '8:00',
+        'end' => '18:00',
+    ),
+    /**
+     * レスポンスメッセージ
+     */
+    'messages' => array(
+        'check' => array(
+            'register' => array(
+                'before' => "QRコードをスキャンして登録してください。",
+                'after' => "",
+            ),
+            'receipt' => array(
+                'before' => "受付ボタンをクリックすると本日の予約を受け付けます。",
+                'now' => "受付中です。しばらくお待ち下さい。",
+                'after' => "本日の予約を受け付けました。",
+                'out_area' => "只今受付できません。\n半径500m以内より受付できます。",
+                'out_time' => "只今の時間は受付できません。",
+                'before_release' => "只今受付できません\n%sより受付できます。",
+            ),
+        ),
+        'receipt' => array(
+            'register' => array(
+                'success' => "登録が完了しました。",
+                'error' => "再度登録を行ってください。",
+            ),
+            'entry' => array(
+                'success' => "受付申請が完了しました。\nしばらくお待ち下さい。",
+                'error' => "受付申請できませんでした。",
+            ),
+        ),
+    ),
+
+    /**
+     * アプリケーションログ
+     */
+    'logs' => APPPATH . 'mylogs' . DS,
+    'debug' => true,
+
+    /**
+     * request test
+     */
+    'request_test' => true,
+
+
+    /**
+     * Beacon Info (UUID, NAME)
+     */
+    "beacon_info" => array(
+        "xxxx" => "xxxx_name",
+        "yyyy" => "yyyy_name",
+        "zzzz" => "zzzz_name",
+    ),
+);

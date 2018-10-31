@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "231993783549",
+    "firebase_url": "https://patientreception.firebaseio.com",
+    "project_id": "patientreception",
+    "storage_bucket": "patientreception.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231993783549:android:0f7ccacc8cd79fa1",
+        "android_client_info": {
+          "package_name": "jp.ac.tottori_u.med.hosp.patient_reception"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231993783549-15a51urgm5llqoiobu31tdrgs1dfrusv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZjZlg26TeJGYSgVUlkrqQezdQy_bOsZQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

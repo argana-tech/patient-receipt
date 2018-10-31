@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c5G-mZ-how">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vmL-3n-5GO">
+            <objects>
+                <navigationController id="c5G-mZ-how" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5Pc-s1-O6H">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7hT-mg-IBS" kind="relationship" relationship="rootViewController" id="HRm-GM-mIe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I7F-lP-P1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1621" y="43"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="vNx-MR-uX9">
+            <objects>
+                <viewController id="7hT-mg-IBS" customClass="MenuViewController" customModule="patient_reception" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x0X-aY-hkf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVu-70-2az" customClass="MDCRaisedButton">
+                                <rect key="frame" x="20" y="118" width="374" height="95"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="69"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="registerTap:" destination="7hT-mg-IBS" eventType="touchUpInside" id="rYK-6S-poB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XH0-md-Fcn">
+                                <rect key="frame" x="20" y="233" width="374" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="bhp-Ei-aw8"/>
+                                </constraints>
+                                <string key="text">QRコードをスキャンして
+登録してください</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPu-EK-aw9">
+                                <rect key="frame" x="20" y="464" width="374" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="8Xx-Z8-NV4"/>
+                                </constraints>
+                                <string key="text">受付ボタンをクリックすると
+本日の予約を受け付けます。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qR-VD-qfY" customClass="MDCRaisedButton">
+                                <rect key="frame" x="20" y="343" width="374" height="95"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="69"/>
+                                <state key="normal" title="受付"/>
+                                <connections>
+                                    <action selector="receptionTap:" destination="7hT-mg-IBS" eventType="touchUpInside" id="zi7-Qb-jeq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="受付可能時間: 8:00 ~ 18:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFm-Au-hQa">
+                                <rect key="frame" x="20" y="559" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8qR-VD-qfY" firstAttribute="top" secondItem="XH0-md-Fcn" secondAttribute="bottom" constant="30" id="0X1-c5-cGX"/>
+                            <constraint firstItem="oVu-70-2az" firstAttribute="top" secondItem="LEB-WT-caR" secondAttribute="top" constant="30" id="4dx-zY-rWc"/>
+                            <constraint firstItem="8qR-VD-qfY" firstAttribute="leading" secondItem="LEB-WT-caR" secondAttribute="leading" constant="20" id="AQs-H1-Xim"/>
+                            <constraint firstItem="oVu-70-2az" firstAttribute="leading" secondItem="LEB-WT-caR" secondAttribute="leading" constant="20" id="Eaa-cW-Ev4"/>
+                            <constraint firstItem="LEB-WT-caR" firstAttribute="trailing" secondItem="gPu-EK-aw9" secondAttribute="trailing" constant="20" id="I6w-Aj-78y"/>
+                            <constraint firstItem="gPu-EK-aw9" firstAttribute="top" secondItem="8qR-VD-qfY" secondAttribute="bottom" constant="26" id="LJu-4r-SiE"/>
+                            <constraint firstItem="LEB-WT-caR" firstAttribute="trailing" secondItem="oVu-70-2az" secondAttribute="trailing" constant="20" id="RmL-2Y-sYG"/>
+                            <constraint firstItem="XH0-md-Fcn" firstAttribute="top" secondItem="oVu-70-2az" secondAttribute="bottom" constant="20" id="XMM-W1-1lU"/>
+                            <constraint firstItem="oVu-70-2az" firstAttribute="centerX" secondItem="x0X-aY-hkf" secondAttribute="centerX" id="adV-v9-qiZ"/>
+                            <constraint firstItem="XH0-md-Fcn" firstAttribute="leading" secondItem="LEB-WT-caR" secondAttribute="leading" constant="20" id="dcm-CT-mkW"/>
+                            <constraint firstItem="iFm-Au-hQa" firstAttribute="top" secondItem="gPu-EK-aw9" secondAttribute="bottom" constant="10" id="jzT-Q6-Fyk"/>
+                            <constraint firstItem="gPu-EK-aw9" firstAttribute="leading" secondItem="LEB-WT-caR" secondAttribute="leading" constant="20" id="n5g-Yg-cAh"/>
+                            <constraint firstItem="iFm-Au-hQa" firstAttribute="leading" secondItem="LEB-WT-caR" secondAttribute="leading" constant="20" id="rkz-nu-KbZ"/>
+                            <constraint firstItem="LEB-WT-caR" firstAttribute="trailing" secondItem="XH0-md-Fcn" secondAttribute="trailing" constant="20" id="yr6-yJ-btv"/>
+                            <constraint firstItem="LEB-WT-caR" firstAttribute="trailing" secondItem="iFm-Au-hQa" secondAttribute="trailing" constant="20" id="zkH-VV-9pw"/>
+                            <constraint firstItem="LEB-WT-caR" firstAttribute="trailing" secondItem="8qR-VD-qfY" secondAttribute="trailing" constant="20" id="zwA-Ee-k8M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LEB-WT-caR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4lo-l0-yt0"/>
+                    <connections>
+                        <outlet property="qrDiscriptionLabel" destination="XH0-md-Fcn" id="qui-Ox-AD9"/>
+                        <outlet property="receptionButton" destination="8qR-VD-qfY" id="crd-YV-io5"/>
+                        <outlet property="receptionDiscriptionLabbel" destination="gPu-EK-aw9" id="fzN-Iu-i1U"/>
+                        <outlet property="receptionPossibleLabel" destination="iFm-Au-hQa" id="m64-nZ-FA1"/>
+                        <outlet property="registerButton" destination="oVu-70-2az" id="d8S-Vg-Qjl"/>
+                        <segue destination="M6G-Nb-0Yk" kind="presentation" identifier="ReceptionViewSegue" id="gJ0-8Q-xo6"/>
+                        <segue destination="Pvm-Ob-IkM" kind="presentation" identifier="RegisterViewSegue" id="ccR-eq-h41"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIH-tp-AK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727.5" y="41.197183098591552"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b5u-cQ-EIC">
+            <objects>
+                <navigationController id="M6G-Nb-0Yk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JF8-Wr-2GE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FdW-Fw-Nfw" kind="relationship" relationship="rootViewController" id="5Xh-I2-EQ0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Nz-Gj-lZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343" y="537"/>
+        </scene>
+        <!--患者受付-->
+        <scene sceneID="MXl-ay-GdD">
+            <objects>
+                <viewController id="FdW-Fw-Nfw" customClass="ReceptionViewController" customModule="patient_reception" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bmX-AP-CG8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="au8-WN-z9F"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="患者受付" id="1zj-xb-9tQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1xd-R8-qfb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="537"/>
+        </scene>
+        <!--患者登録-->
+        <scene sceneID="WhA-5D-RxP">
+            <objects>
+                <viewController id="2fc-JL-H7R" customClass="RegisterViewController" customModule="patient_reception" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DMf-AQ-hgm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0u-cj-7YC" customClass="MDCFloatingButton">
+                                <rect key="frame" x="157" y="742" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="MHq-qO-fhM"/>
+                                    <constraint firstAttribute="height" constant="100" id="ybt-m0-G6C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
+                                <state key="normal" title="×"/>
+                                <connections>
+                                    <action selector="cancellButtonTap:" destination="2fc-JL-H7R" eventType="touchUpInside" id="CsR-ZY-Du7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axg-J8-8g5">
+                                <rect key="frame" x="20" y="153" width="374" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="221" id="Edj-eo-Qnw"/>
+                                </constraints>
+                                <string key="text">QRコードを読み取りました。
+登録してもよろしければ、OKボタンを押してください。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7k-l5-prF" customClass="MDCRaisedButton">
+                                <rect key="frame" x="20" y="525" width="374" height="98"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="registerTap:" destination="2fc-JL-H7R" eventType="touchUpInside" id="7hg-wZ-oZ4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1bh-y8-FJ9" firstAttribute="bottom" secondItem="u0u-cj-7YC" secondAttribute="bottom" constant="20" id="1uI-m5-5RC"/>
+                            <constraint firstItem="l7k-l5-prF" firstAttribute="leading" secondItem="1bh-y8-FJ9" secondAttribute="leading" constant="20" id="O8U-h4-WjY"/>
+                            <constraint firstItem="u0u-cj-7YC" firstAttribute="centerX" secondItem="l7k-l5-prF" secondAttribute="centerX" id="QrF-eT-kId"/>
+                            <constraint firstItem="1bh-y8-FJ9" firstAttribute="trailing" secondItem="l7k-l5-prF" secondAttribute="trailing" constant="20" id="Sje-Nl-qV1"/>
+                            <constraint firstItem="1bh-y8-FJ9" firstAttribute="trailing" secondItem="axg-J8-8g5" secondAttribute="trailing" constant="20" id="dLP-qG-uLT"/>
+                            <constraint firstItem="axg-J8-8g5" firstAttribute="leading" secondItem="1bh-y8-FJ9" secondAttribute="leading" constant="20" id="gCD-wd-7Gt"/>
+                            <constraint firstItem="axg-J8-8g5" firstAttribute="top" secondItem="1bh-y8-FJ9" secondAttribute="top" constant="65" id="lXy-WT-YXa"/>
+                            <constraint firstItem="1bh-y8-FJ9" firstAttribute="bottom" secondItem="u0u-cj-7YC" secondAttribute="bottom" constant="20" id="pTQ-P3-tJg"/>
+                            <constraint firstItem="l7k-l5-prF" firstAttribute="centerY" secondItem="DMf-AQ-hgm" secondAttribute="centerY" constant="126" id="zOn-2P-OXa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1bh-y8-FJ9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="患者登録" id="Cxz-cp-ghA"/>
+                    <connections>
+                        <outlet property="cancellButton" destination="u0u-cj-7YC" id="f4S-lc-u6Q"/>
+                        <outlet property="descriptionLabel" destination="axg-J8-8g5" id="xb6-N4-ubg"/>
+                        <outlet property="registerButton" destination="l7k-l5-prF" id="GbX-o9-Y3x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kc1-UZ-qMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1436.2318840579712" y="-243.08035714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eo2-y2-v5Y">
+            <objects>
+                <navigationController id="Pvm-Ob-IkM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EXO-ZI-uDq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2fc-JL-H7R" kind="relationship" relationship="rootViewController" id="EEU-lj-wB7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czK-Uz-iIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="-227"/>
+        </scene>
+        <!--Call View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CallViewController" customModule="patient_reception" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1121" y="980"/>
+        </scene>
+    </scenes>
+</document>

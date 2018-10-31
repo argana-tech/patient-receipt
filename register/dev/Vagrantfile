@@ -1,0 +1,30 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "centos/7"
+
+  config.vm.hostname = "tuhprr"
+
+  config.vm.network :private_network, ip: '192.168.88.15'
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", auto_correct: true
+
+  config.vm.synced_folder ".", "/home/vagrant/sync",  disabled: true
+  config.vm.synced_folder "../", "/vagrant", type: "virtualbox",
+                          :mount_options => ["dmode=777", "fmode=777"]
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "8192"
+  end
+
+  config.vm.provision "docker"
+
+  config.vm.provision "shell", inline: <<-SHELL
+    timedatectl set-timezone Asia/Tokyo
+    localectl set-locale LC_CTYPE=en_US.utf8
+    cd /vagrant/dev/mysql && ./provision.sh
+    cd /vagrant/dev/php && ./provision.sh
+  SHELL
+end

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* -------------------------------------------------------- reset &amp; defaultsetting */
+
+html {
+	/* font-size: 62.5%; 10px */
+	font-size: 0.833vw;
+	/* font-size: 1.2vh; */
+	font-family:  "hiragino kaku gothic pro","ヒラギノ角ゴ Pro W3","メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+body, div, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, li, 
+brockquote, pre, table, caption, th, td, address, 
+form, fieldset, legend, object, hr {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, pre, table, code, kbd, samp, acronym, input, textarea, button {
+	color: #333;
+	font-size: 1.6rem;
+}
+
+a, ins {
+  	text-decoration: none;
+}
+
+address, em, cite, dfn, var {
+  	font-style:normal;
+}
+
+input, textarea, button {
+  	font-weight: normal;
+}
+
+img {
+	border: none;
+}
+
+.clearfix:after {
+  	content: ".";
+  	display: block;
+  	clear: both;
+  	height: 0;
+  	visibility: hidden;
+}
+
+.clearfix {
+  	min-height: 1px;
+}
+
+* html .clearfix {
+  	height: 1px;
+  	/*¥*//*/
+  	height: auto;
+  	overflow: hidden;
+  	/**/
+}
+
+a {
+	outline: none;
+}
+
+a:hover {
+	color:;
+	text-decoration: none;
+}
+
+body {
+	color: #333;
+	font-size: 1.6em;
+	line-height: 1.5;
+}
+
+ul {
+	list-style: none;
+}
